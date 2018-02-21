@@ -5,7 +5,7 @@ let hiHats = Array(16).fill(false);
 let rideCymbals = Array(16).fill(false);
 
 
-let indexCheck = (index) => index < 0 || index > 16; 
+let indexCheck = (index) => index < 0 || index > 15; 
 
 
 function toggleDrum (arrayName, index) {
@@ -53,7 +53,28 @@ function clear (arrayName) {
 
 function invert (arrayName) {
 	switch(arrayName) {
-	case 'kicks': 
+	case 'kicks':
+		for(let i = 0; i < kicks.length; i++) {
+			kicks[i] = !kicks[i];
+		}
+		break;
+	case 'snares':
+		for( let i = 0; i < snares.length; i++) {
+			snares[i] = !snares[i];
+		}
+		break;
+	case 'hiHats':
+		for( let i = 0; i < hiHats.length; i++) {
+				hiHats[i] = !hiHats[i];
+	}
+		break;
+	case 'rideCymbals':
+	       for (let i = 0; i < rideCymbals.length; i++) {
+		       rideCymbals[i] = !rideCymbals[i];
+	       }
+		break;
+	default:
+		return;
 		  
 }
 
